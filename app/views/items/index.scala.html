@@ -1,0 +1,18 @@
+@(items: Set[model.Item])
+
+<html>
+    <head>
+        <title>Všechny položky</title>
+    </head>
+    <body>
+        <h1>Všechny položky</h1>
+        @for(item <- items){
+            <h1>@item.getName</h1>
+            <p>Autor: @item.getAuthor</p>
+            <p>Rok: @item.getYear</p>
+            <p>Typ: @item.getType</p>
+            <p>Popis: @item.getTextShort</p>
+            <p>@item.getTextLong</p>
+        }
+    </body>
+</html>
