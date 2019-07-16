@@ -1,0 +1,25 @@
+@import model.Item
+@import play.data.Form
+@import helper._
+@(itemForm : Form[Item])
+
+<html>
+    <head>
+        <title>Upravit položku</title>
+    </head>
+    <body>
+        <h1>Upravit položku</h1>
+        @helper.form(action = routes.ItemsController.update()){
+            @helper.CSRF.formField
+            @helper.inputText(itemForm("id"))
+            @helper.inputText(itemForm("name"))
+            @helper.inputText(itemForm("author"))
+            @helper.inputText(itemForm("type"))
+            @helper.inputText(itemForm("year"))
+            @helper.inputText(itemForm("textShort"))
+            @helper.inputText(itemForm("textLong"))
+
+            <input type="submit" value="Upravit">
+            }
+    </body>
+</html>
